@@ -236,7 +236,7 @@
         /* Hero name typography */
         .hero-name {
             position: absolute;
-            top: 9%;
+            top: 50%;
             left: 6%;
             z-index: 5;
             pointer-events: none;
@@ -296,6 +296,7 @@
         /* === TUBE TEXT ANIMATION === */
         .hero-name {
             perspective: 1200px;
+            animation: heroNameReveal 10s linear infinite;
         }
         .name-first,
         .name-last {
@@ -320,6 +321,16 @@
         }
         /* space char */
         .name-letter.space { width: 0.28em; }
+
+
+        /* === HERO NAME REVEAL — synced to 10s background loop === */
+        @keyframes heroNameReveal {
+            0%       { opacity: 0; transform: translateY(calc(-50% + 14px)); }
+            8%       { opacity: 1; transform: translateY(-50%);              }
+            24%      { opacity: 0; transform: translateY(calc(-50% - 10px));}
+            82%      { opacity: 0; transform: translateY(calc(-50% + 10px));}
+            100%     { opacity: 0; transform: translateY(calc(-50% + 14px));}
+        }
 
         /* ===========================
            SECTION BASE
